@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관절 및 류마티스 질환 상담 설문</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>관절 및 류마티스 질환 상담 설문</h1>
+        <p class="disclaimer">
+            주의: 이 설문은 의학적 진단을 대체하지 않습니다. 증상 파악을 돕기 위한 보조 도구입니다. 정확한 진단과 치료를 위해서는 반드시 의료 전문가와 상담하십시오.
+            <br><br>
+            **참고: 이 진단 결과는 AI가 생성한 것으로, 의료적 조언이나 진단을 대체할 수 없습니다. 모든 의료 결정은 자격을 갖춘 의료 전문가와 상의하십시오.**
+            (Note: This diagnostic result is AI-generated and is not a substitute for medical advice or diagnosis. All medical decisions should be discussed with a qualified healthcare professional.)
+        </p>
+
+        <form id="healthForm">
+            <input type="hidden" name="specialtyType" value="arthritis_joints">
+
+            <div class="question-group">
+                <h2>1. 관절 증상 (Joint Symptoms)</h2>
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="jointPain" value="yes"> 관절 통증이 있나요?
+                    </label>
+                    <div class="sub-question" id="jointPain-details" style="display: none;">
+                        <label>
+                            어떤 관절이 아픈가요?
+                            <input type="text" name="affectedJoints" placeholder="예: 무릎, 손가락">
+                        </label>
+                        <label>
+                            통증의 특징은 무엇인가요?
+                            <select name="painCharacter">
+                                <option value="">-- 선택하세요 --</option>
+                                <option value="dull_ache">둔한 통증</option>
+                                <option value="sharp_stabbing">찌르는 듯한 통증</option>
+                                <option value="burning">타는 듯한 통증</option>
+                                <option value="throbbing">욱신거리는 통증</option>
+                                <option value="other_pain_character">기타</option>
+                            </select>
+                        </label>
+                        <label>
+                            통증은 언제 더 심해지나요?
+                            <select name="painWorse">
+                                <option value="">-- 선택하세요 --</option>
+                                <option value="morning_stiffness">아침에 뻣뻣함</option>
+                                <option value="activity">활동 시</option>
+                                <option value="rest">휴식 시</option>
+                                <option value="cold_damp">춥거나 습할 때</option>
+                                <option value="night">밤에</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="jointSwelling" value="yes"> 관절 부종이 있나요?
+                    </label>
+                    <div class="sub-question" id="jointSwelling-details" style="display: none;">
+                        <label>어떤 관절이 붓나요?</label>
+                        <input type="text" name="swollenJoints" placeholder="예: 무릎, 발목">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="jointStiffness" value="yes"> 관절 뻣뻣함이나 움직임 제한이 있나요?
+                    </label>
+                </div>
+
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="jointRednessWarmth" value="yes"> 관절 부위가 붉거나 열감이 있나요?
+                    </label>
+                </div>
+
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="jointCrepitus" value="yes"> 관절에서 소리(삐걱거림, 뚝뚝거림)가 나나요?
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2>2. 관절 관련 기타 증상 (Other Joint-Related Symptoms)</h2>
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="muscleWeakness" value="yes"> 근육 약화 또는 통증이 있나요?
+                    </label>
+                </div>
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="skinRash" value="yes"> 피부 발진이 관절 문제와 함께 나타나나요?
+                    </label>
+                </div>
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="eyeDryness" value="yes"> 눈 건조증 또는 구강 건조증이 있나요?
+                    </label>
+                </div>
+                <div class="question">
+                    <label for="familyHistoryArthritis">가족 중 관절염이나 류마티스 질환 병력이 있나요?</label>
+                    <textarea id="familyHistoryArthritis" name="familyHistoryArthritis" rows="2" placeholder="예: 어머니 류마티스 관절염"></textarea>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2>6. 기타 우려 사항 또는 질문 (Other Concerns or Questions)</h2>
+                <div class="question">
+                    <label for="otherConcerns">
+                        위에 나열되지 않은 다른 관련 증상이나 궁금한 점이 있으시면 여기에 작성해 주세요.
+                    </label>
+                    <textarea id="otherConcerns" name="otherConcerns" rows="5" placeholder="예: 평소보다 숨쉬기가 더 힘들어졌습니다. / 특정 약 복용 후 증상이 나타났습니다."></textarea>
+                </div>
+            </div>
+
+            <button type="submit">결과 확인</button>
+        </form>
+
+        <div id="diagnosticView" style="display: none;">
+            <h2>진단 고려 사항</h2>
+            <ul id="diagnosticList">
+                </ul>
+            <p class="recommendation">
+                이 정보는 AI가 생성한 것으로, 의료 전문가와의 상담을 대체할 수 없습니다. 정확한 진단과 치료를 위해서는 반드시 자격을 갖춘 의료 전문가의 진료를 받으십시오.
+            </p>
+        </div>
+
+        <footer>
+            <p style="text-align: center; font-size: 0.8em; color: #777; margin-top: 30px;">
+                Designed by Jason Kim
+            </p>
+        </footer>
+    </div>
+
+    <script src="main.js?v=20250603"></script> </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전문가 건강 상담 선택</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling for the landing page */
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .landing-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        .landing-container h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .specialty-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .specialty-buttons a {
+            display: block;
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .specialty-buttons a:hover {
+            background-color: #2980b9;
+        }
+        .disclaimer-landing {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 40px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <h1>전문가 건강 상담 유형을 선택하세요</h1>
+        <p>어떤 전문가에게 건강 관련 질문을 하고 싶으신가요?</p>
+
+        <div class="specialty-buttons">
+            <a href="/respiratory.html"> 호흡기계 질환 전문의 (Respiratory System Specialist)
+                <br><small>목, 기침, 가래, 호흡 곤란 등</small>
+            </a>
+            <a href="/general.html"> 일반 건강 의사 (General Health Doctor)
+                <br><small>전반적인 건강 상태, 피로, 소화, 체중 등</small>
+            </a>
+            <a href="/arthritis.html"> 관절 및 류마티스 질환 전문의 (Arthritis and Joints Specialist)
+                <br><small>관절 통증, 부종, 뻣뻣함 등</small>
+            </a>
+        </div>
+
+        <p class="disclaimer-landing">
+            주의: 이 설문은 의학적 진단을 대체하지 않습니다. 증상 파악을 돕기 위한 보조 도구입니다. 정확한 진단과 치료를 위해서는 반드시 의료 전문가와 상담하십시오.
+        </p>
+    </div>
+</body>
+</html>
